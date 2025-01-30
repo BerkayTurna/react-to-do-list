@@ -16,17 +16,21 @@ function ToDoList() {
   }
 
   function removeTask(index) {
-    let updatedTasks = tasks.filter((_, i) => i !== index);
+    const updatedTasks = tasks.filter((_, i) => i !== index);
     setTasks(updatedTasks);
   }
 
   function moveTaskUp(index) {
     if (index > 0) {
-      let updatedTasks = [...tasks];
-      [updatedTasks[index], updatedTasks[index - 1]] = [
-        updatedTasks[index - 1],
-        updatedTasks[index],
-      ];
+      const updatedTasks = [...tasks];
+      const selectedTask = updatedTasks[index];
+      const temp = updatedTasks[index - 1];
+      updatedTasks[index - 1] = selectedTask;
+      updatedTasks[index] = temp;
+      // [updatedTasks[index], updatedTasks[index - 1]] = [
+      //   updatedTasks[index - 1],
+      //   updatedTasks[index],
+      // ];
       setTasks(updatedTasks);
     }
   }
@@ -38,6 +42,10 @@ function ToDoList() {
         updatedTasks[index + 1],
         updatedTasks[index],
       ];
+      // const selectedTask = updatedTasks[index];
+      // const temp = updatedTasks[index + 1];
+      // updatedTasks[index + 1] = selectedTask;
+      // updatedTasks[index] = temp;
       setTasks(updatedTasks);
     }
   }
