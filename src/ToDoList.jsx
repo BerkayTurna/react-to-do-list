@@ -1,26 +1,26 @@
 import React, { useState } from "react";
 
-function ToDoList() {
+const ToDoList = () => {
   const [tasks, setTasks] = useState(["Walk the dog", "Go to the gym"]);
   const [newTask, setNewTask] = useState("");
 
-  function handleInputChange(event) {
+  const handleInputChange = (event) => {
     setNewTask(event.target.value);
-  }
+  };
 
-  function addTask() {
+  const addTask = () => {
     if (newTask.trim() !== "") {
       setTasks((t) => [...t, newTask]);
       setNewTask("");
     }
-  }
+  };
 
-  function removeTask(index) {
+  const removeTask = (index) => {
     const updatedTasks = tasks.filter((_, i) => i !== index);
     setTasks(updatedTasks);
-  }
+  };
 
-  function moveTaskUp(index) {
+  const moveTaskUp = (index) => {
     if (index > 0) {
       const updatedTasks = [...tasks];
       const selectedTask = updatedTasks[index];
@@ -33,9 +33,9 @@ function ToDoList() {
       // ];
       setTasks(updatedTasks);
     }
-  }
+  };
 
-  function moveTaskDown(index) {
+  const moveTaskDown = (index) => {
     if (index < tasks.length - 1) {
       let updatedTasks = [...tasks];
       [updatedTasks[index], updatedTasks[index + 1]] = [
@@ -48,7 +48,7 @@ function ToDoList() {
       // updatedTasks[index] = temp;
       setTasks(updatedTasks);
     }
-  }
+  };
   return (
     <div className="to-do-list">
       <h1>To-Do List</h1>
@@ -89,5 +89,5 @@ function ToDoList() {
       </div>
     </div>
   );
-}
+};
 export default ToDoList;
