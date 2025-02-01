@@ -1,6 +1,4 @@
-import React from "react";
-
-export const AddToDo = ({ addTask, newTask, handleInputChange }) => {
+const AddToDoItem = ({ addTask, newTask, handleInputChange }) => {
   return (
     <div>
       <input
@@ -15,3 +13,5 @@ export const AddToDo = ({ addTask, newTask, handleInputChange }) => {
     </div>
   );
 };
+
+export default AddToDoItem;

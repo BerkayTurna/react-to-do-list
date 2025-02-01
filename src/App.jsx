@@ -1,7 +1,7 @@
-import ToDoList from "./ToDoList.jsx";
+import ToDoList from "./ToDoList";
 
-function App() {
+const App = () => {
   return <ToDoList />;
-}
+};
 
 export default App;
