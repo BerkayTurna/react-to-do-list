@@ -13,7 +13,7 @@ const ToDoList = () => {
 
   const addTask = () => {
     if (newTask.trim() !== "") {
-      setTasks((t) => [...t, newTask]);
+      setTasks((prevTasks) => [...prevTasks, newTask]);
       setNewTask("");
     }
   };
