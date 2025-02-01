@@ -1,8 +1,9 @@
 import TodoItem from "./../toDoItem/TodoItem";
+import "./style.css";
 
 const ToDoListContainer = ({ tasks, removeTask, moveTaskUp, moveTaskDown }) => {
   return (
-    <div>
+    <div className="container">
       <ul>
         {tasks.map((task, index) => (
           <TodoItem
