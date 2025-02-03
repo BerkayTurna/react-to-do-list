@@ -1,6 +1,12 @@
 import React from "react";
 
-export const AddToDo = ({ addTask, newTask, handleInputChange }) => {
+export const AddToDo = ({
+  addTask,
+  newTask,
+  handleInputChange,
+  color,
+  handleColorChange,
+}) => {
   return (
     <div>
       <input
@@ -9,6 +15,7 @@ export const AddToDo = ({ addTask, newTask, handleInputChange }) => {
         value={newTask}
         onChange={handleInputChange}
       />
+      <input type="color" value={color} onChange={handleColorChange} />
       <button className="add-button" onClick={addTask}>
         Add
       </button>

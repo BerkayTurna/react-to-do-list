@@ -4,16 +4,26 @@ import { AddToDo } from "./components/app/AddToDo";
 import { ToDoContainer } from "./components/app/ToDoContainer";
 
 const ToDoList = () => {
-  const [tasks, setTasks] = useState(["Walk the dog", "Go to the gym"]);
+  const [tasks, setTasks] = useState([
+    { text: "Walk the Dog", color: "#fff" },
+    { text: "Take out the trash" },
+  ]);
   const [newTask, setNewTask] = useState("");
+  const [taskColor, setTaskColor] = useState("#000000");
 
   const handleInputChange = (event) => {
     setNewTask(event.target.value);
   };
 
+  const handleColorChange = (event) => {
+    setTaskColor(event.target.value);
+  };
   const addTask = () => {
     if (newTask.trim() !== "") {
-      setTasks((prevTasks) => [...prevTasks, newTask]);
+      setTasks((prevTasks) => [
+        ...prevTasks,
+        { text: newTask, color: taskColor },
+      ]);
       setNewTask("");
     }
   };
@@ -59,6 +69,8 @@ const ToDoList = () => {
         addTask={addTask}
         handleInputChange={handleInputChange}
         newTask={newTask}
+        color={taskColor}
+        handleColorChange={handleColorChange}
       />
       <ToDoContainer
         tasks={tasks}

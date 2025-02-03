@@ -60,6 +60,14 @@ input[type="text"] {
   padding: 4.6px;
   color: hsl(0, 0%, 80%);
 }
+input[type="color"] {
+  border: none;
+  padding: 0;
+  height: 32px;
+  transform: translate(0, 6.5px);
+  margin-left: -2px;
+  margin-right: -2px;
+}
 ul {
   padding: 0;
 }
