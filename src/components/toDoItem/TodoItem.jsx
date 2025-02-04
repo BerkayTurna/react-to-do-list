@@ -1,6 +1,4 @@
-import React from "react";
-
-export const Todo = ({ task, index, removeTask, moveTaskUp, moveTaskDown }) => {
+const TodoItem = ({ task, index, removeTask, moveTaskUp, moveTaskDown }) => {
   return (
     <li style={{ backgroundColor: task.color }}>
       <span className="text">{task.text}</span>
@@ -16,3 +14,5 @@ export const Todo = ({ task, index, removeTask, moveTaskUp, moveTaskDown }) => {
     </li>
   );
 };
+
+export default TodoItem;

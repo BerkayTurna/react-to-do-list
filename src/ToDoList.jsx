@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { Header } from "./components/shared/header/Header";
-import { AddToDo } from "./components/app/AddToDo";
-import { ToDoContainer } from "./components/app/ToDoContainer";
+import { useState } from "react";
+import Header from "./components/header/Header";
+import AddToDoItem from "./components/addToDoItem/AddToDoItem";
+import ToDoListContainer from "./components/toDoListContainer/ToDoListContainer";
 
 const ToDoList = () => {
   const [tasks, setTasks] = useState([
@@ -65,14 +65,14 @@ const ToDoList = () => {
   return (
     <div className="to-do-list">
       <Header />
-      <AddToDo
+      <AddToDoItem
         addTask={addTask}
         handleInputChange={handleInputChange}
         newTask={newTask}
         color={taskColor}
         handleColorChange={handleColorChange}
       />
-      <ToDoContainer
+      <ToDoListContainer
         tasks={tasks}
         removeTask={removeTask}
         moveTaskUp={moveTaskUp}

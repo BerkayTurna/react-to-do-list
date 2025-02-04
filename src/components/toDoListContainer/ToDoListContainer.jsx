@@ -1,17 +1,12 @@
-import React from "react";
-import { Todo } from "./Todo";
+import TodoItem from "./../toDoItem/TodoItem";
+import "./style.css";
 
-export const ToDoContainer = ({
-  tasks,
-  removeTask,
-  moveTaskUp,
-  moveTaskDown,
-}) => {
+const ToDoListContainer = ({ tasks, removeTask, moveTaskUp, moveTaskDown }) => {
   return (
-    <div>
+    <div className="container">
       <ul>
         {tasks.map((task, index) => (
-          <Todo
+          <TodoItem
             key={index}
             index={index}
             task={task}
@@ -24,3 +19,5 @@ export const ToDoContainer = ({
     </div>
   );
 };
+
+export default ToDoListContainer;
