@@ -18,7 +18,7 @@ Installation
 
 Clone the repository:
 
-git clone https://github.com/BerkayTurna/todo-list.git
+git clone https://github.com/BerkayTurna/react-to-do-list.git
 
 Navigate to the project folder:
 
